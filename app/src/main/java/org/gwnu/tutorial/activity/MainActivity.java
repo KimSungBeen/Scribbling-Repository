@@ -1,16 +1,21 @@
 package org.gwnu.tutorial.activity;
 
 import android.os.Bundle;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import org.gwnu.tutorial.R;
+import org.gwnu.tutorial.fragment.DefaultFragment;
 import org.gwnu.tutorial.fragment.Fragment1;
+import org.gwnu.tutorial.fragment.Fragment2;
 
 public class MainActivity extends DefaultActivity {
     Fragment1.OnLoadingListener onLoadingListener;
+    Fragment1 fragment1;
+    Fragment2 fragment2;
 
     /**********************************************************************************************/
 
@@ -24,12 +29,12 @@ public class MainActivity extends DefaultActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Fragment fragment = new Fragment1();
-        Fragment1 fragment1 = (Fragment1)fragment;
-//        fragment1.setOnLoadingListener(onLoadingListener);
+        fragment1 = new Fragment1();
+        fragment2 = new Fragment2();
+
 
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.frag_container, fragment1);
+        fragmentTransaction.replace(R.id.frag_container, fragment2);
         fragmentTransaction.commit();
 
 
@@ -40,12 +45,14 @@ public class MainActivity extends DefaultActivity {
     @Override
     protected void onResume() {
         super.onResume();
-    }
-
-    /**********************************************************************************************/
-
-    public void setOnLoadingListener(Fragment1.OnLoadingListener onLoadingListener) {
-        this.onLoadingListener = onLoadingListener;
+        fragment2.setOnImageClickListener(new Fragment2.OnImageClickListener() {
+            @Override
+            public void onImageClick(ImageView imageView, TextView textView) {
+                imageView.setImageDrawable(getResources().getDrawable(R.drawable.ic_launcher_foreground));
+                textView.setText("Hello World");
+//                Toast.makeText(MainActivity.this, "Hello world", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     /**********************************************************************************************/

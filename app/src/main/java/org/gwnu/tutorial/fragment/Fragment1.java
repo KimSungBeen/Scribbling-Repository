@@ -20,17 +20,16 @@ import org.gwnu.tutorial.R;
 import org.gwnu.tutorial.activity.MainActivity;
 
 public class Fragment1 extends DefaultFragment {
-    static OnLoadingListener mOnLoadingListener;
-    ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-    FrameLayout frameLayout;
-    ImageView imageView;
+    private static final String TAG = Fragment1.class.getSimpleName();
+
+    OnLoadingListener mOnLoadingListener;
+    ViewGroup.LayoutParams mLayoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+    FrameLayout mFrameLayout;
+    ImageView mImageView;
 
     /**********************************************************************************************/
 
     public Fragment1() {
-        MainActivity mainActivity = (MainActivity) getActivity();
-
-//        mainActivity.setOnLoadingListener(mOnLoadingListener);
     }
 
     /**********************************************************************************************/
@@ -38,19 +37,19 @@ public class Fragment1 extends DefaultFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        imageView = new ImageView(getActivity());
-        frameLayout = getActivity().findViewById(R.id.frag_container);
+        mImageView = new ImageView(getActivity());
+        mFrameLayout = getActivity().findViewById(R.id.frag_container);
 
         mOnLoadingListener = new OnLoadingListener() {
             @Override
             public void loadDate(boolean loading) {
                 if(loading){ //true
-                    imageView.setImageDrawable(getActivity().getResources().getDrawable(R.mipmap.ic_launcher));
-                    imageView.setLayoutParams(layoutParams);
-                    frameLayout.addView(imageView);
+                    mImageView.setImageDrawable(getActivity().getResources().getDrawable(R.mipmap.ic_launcher));
+                    mImageView.setLayoutParams(mLayoutParams);
+                    mFrameLayout.addView(mImageView);
                 }else{ //false
 //                    Toast.makeText(getContext(), "false", Toast.LENGTH_SHORT).show();
-                    frameLayout.removeView(imageView);
+                    mFrameLayout.removeView(mImageView);
 
                 }
             }
@@ -112,10 +111,6 @@ public class Fragment1 extends DefaultFragment {
     public interface OnLoadingListener {
         void loadDate(boolean loading);
     }
-
-    /**********************************************************************************************/
-
-
 
     /**********************************************************************************************/
 
