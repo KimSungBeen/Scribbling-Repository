@@ -15,12 +15,15 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.databinding.DataBindingUtil;
 
 import org.gwnu.tutorial.R;
 import org.gwnu.tutorial.activity.MainActivity;
+import org.gwnu.tutorial.databinding.Fragmnet1Binding;
 
 public class Fragment1 extends DefaultFragment {
     private static final String TAG = Fragment1.class.getSimpleName();
+    Fragmnet1Binding fragmnet1Binding;
 
     OnLoadingListener mOnLoadingListener;
     ViewGroup.LayoutParams mLayoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
@@ -61,21 +64,19 @@ public class Fragment1 extends DefaultFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragmnet_1, container, false);
-
-        return view;
+        fragmnet1Binding = DataBindingUtil.inflate(inflater, R.layout.fragmnet_1, container, false);
+        fragmnet1Binding.setFrag1(this);
+        return fragmnet1Binding.getRoot();
     }
 
     /**********************************************************************************************/
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        TextView tvFrag1 = view.findViewById(R.id.tv_frag1);
-        tvFrag1.setText("Test....!!");
-        tvFrag1.setTextSize(TypedValue.COMPLEX_UNIT_SP, 40);
-        tvFrag1.setTextColor(Color.parseColor("#FF0000")); //Color is RED
-        tvFrag1.setGravity(Gravity.CENTER);
+        fragmnet1Binding.tvFrag1.setText("Test....!!");
+        fragmnet1Binding.tvFrag1.setTextSize(TypedValue.COMPLEX_UNIT_SP, 40);
+        fragmnet1Binding.tvFrag1.setTextColor(Color.parseColor("#FF0000")); //Color is RED
+        fragmnet1Binding.tvFrag1.setGravity(Gravity.CENTER);
     }
 
     /**********************************************************************************************/
