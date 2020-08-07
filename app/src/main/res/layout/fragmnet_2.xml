@@ -1,52 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="10dp">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cv_frag2"
+    <data>
+        <variable
+            name="frag2"
+            type="org.gwnu.tutorial.fragment.Fragment2" />
+    </data>
+
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:foreground="?android:selectableItemBackground"
-        app:cardCornerRadius="5dp"
-        app:cardElevation="8dp"
-        app:cardUseCompatPadding="true">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
 
-        <LinearLayout
-            android:id="@+id/ll_frag2"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_frag2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:duplicateParentState="true"
-            android:orientation="vertical">
+            android:layout_marginTop="30dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:selectableItemBackground"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="8dp"
+            app:cardUseCompatPadding="true">
 
-            <ImageView
-                android:id="@+id/iv_frag2"
+            <LinearLayout
+                android:id="@+id/ll_frag2"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:layout_gravity="top"
-                android:contentDescription="@string/image"
+                android:layout_height="wrap_content"
                 android:duplicateParentState="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/ic_launcher_background" />
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tv_frag2"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_gravity="bottom"
-                android:duplicateParentState="true"
-                android:gravity="center"
-                android:text="Empty"
-                android:textSize="28sp"
-                android:textStyle="bold" />
-        </LinearLayout>
+                <ImageView
+                    android:id="@+id/iv_frag2"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_gravity="top"
+                    android:contentDescription="@string/image"
+                    android:duplicateParentState="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_launcher_background" />
 
-    </androidx.cardview.widget.CardView>
+                <TextView
+                    android:id="@+id/tv_frag2"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="bottom"
+                    android:duplicateParentState="true"
+                    android:gravity="center"
+                    android:text="Empty"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
-</FrameLayout>
+        </androidx.cardview.widget.CardView>
+
+    </FrameLayout>
+</layout>

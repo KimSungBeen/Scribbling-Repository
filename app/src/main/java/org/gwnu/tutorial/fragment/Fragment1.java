@@ -10,15 +10,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
+import androidx.databinding.ObservableField;
 
 import org.gwnu.tutorial.R;
-import org.gwnu.tutorial.activity.MainActivity;
 import org.gwnu.tutorial.databinding.Fragmnet1Binding;
 
 public class Fragment1 extends DefaultFragment {
@@ -33,6 +31,7 @@ public class Fragment1 extends DefaultFragment {
     /**********************************************************************************************/
 
     public Fragment1() {
+        ObservableField<String> stringObservableField = new ObservableField<>();
     }
 
     /**********************************************************************************************/

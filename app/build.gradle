@@ -8,8 +8,8 @@ android {
         applicationId "org.gwnu.tutorial"
         minSdkVersion 16
         targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        versionCode 100
+        versionName "1.0.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -40,4 +40,12 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation "androidx.cardview:cardview:1.0.0"
 
+    //Gson
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.2'
+
+    //Retrofit2
+    implementation 'com.squareup.retrofit2:retrofit:2.6.2'
+
+    //WorkManager
+    implementation "androidx.work:work-runtime:2.4.0"
 }

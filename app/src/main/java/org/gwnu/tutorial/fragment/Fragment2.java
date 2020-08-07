@@ -1,7 +1,6 @@
 package org.gwnu.tutorial.fragment;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,11 +10,15 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
+import androidx.databinding.DataBindingUtil;
 
 import org.gwnu.tutorial.R;
+import org.gwnu.tutorial.databinding.Fragmnet2Binding;
 
 public class Fragment2 extends DefaultFragment {
     private static final String TAG = Fragment2.class.getSimpleName();
+    Fragmnet2Binding fragmnet2Binding;
+
     OnImageClickListener mOnImageClickListener;
     CardView mCardView;
     ImageView mImageView;
@@ -26,11 +29,9 @@ public class Fragment2 extends DefaultFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragmnet_2, container, false);
-        mCardView = view.findViewById(R.id.cv_frag2);
-        mImageView = view.findViewById(R.id.iv_frag2);
-        mTextView = view.findViewById(R.id.tv_frag2);
-        return view;
+        fragmnet2Binding = DataBindingUtil.inflate(inflater, R.layout.fragmnet_2, container, false);
+        fragmnet2Binding.setFrag2(this);
+        return fragmnet2Binding.getRoot();
     }
 
     /**********************************************************************************************/
