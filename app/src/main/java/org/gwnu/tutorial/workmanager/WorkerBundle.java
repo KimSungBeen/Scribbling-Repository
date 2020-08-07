@@ -9,6 +9,10 @@ import androidx.work.WorkerParameters;
 
 public class WorkerBundle {
 
+
+    /**
+     * Uploader Worker
+     * */
     public static class UploaderWorker extends Worker {
 
         public UploaderWorker(@NonNull Context context, @NonNull WorkerParameters workerParams) {
@@ -25,6 +29,22 @@ public class WorkerBundle {
             String key = data.getString("key");
 
             return Result.success();
+        }
+    }
+
+    /**
+     * Loading Worker
+     * */
+    public static class LoadingWorker extends Worker {
+
+        public LoadingWorker(@NonNull Context context, @NonNull WorkerParameters workerParams) {
+            super(context, workerParams);
+        }
+
+        @NonNull
+        @Override
+        public Result doWork() {
+            return null;
         }
     }
 
