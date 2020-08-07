@@ -1,9 +1,6 @@
 package org.gwnu.tutorial.workmanager;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.provider.SyncStateContract;
-import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,7 +10,6 @@ import androidx.work.OneTimeWorkRequest;
 import androidx.work.PeriodicWorkRequest;
 import androidx.work.WorkManager;
 
-import java.lang.reflect.Array;
 import java.util.concurrent.TimeUnit;
 
 public class WorkManagerTutorial extends AppCompatActivity {
@@ -37,17 +33,18 @@ public class WorkManagerTutorial extends AppCompatActivity {
                 .build();
 
 
-        oUploadWorkRequest = new OneTimeWorkRequest.Builder(UploadWorker.class)
+        oUploadWorkRequest = new OneTimeWorkRequest.Builder(WorkerBundle.UploaderWorker.class)
                 .setConstraints(constraints)
                 .build();
 
-        pUploadWorkRequest = new PeriodicWorkRequest.Builder(UploadWorker.class, 1, TimeUnit.HOURS)
+        pUploadWorkRequest = new PeriodicWorkRequest.Builder(WorkerBundle.UploaderWorker.class, 1, TimeUnit.HOURS)
                 .setConstraints(constraints)
                 .setInputData(data)
                 .build();
 
         WorkManager.getInstance(this).enqueue(oUploadWorkRequest);
         WorkManager.getInstance(this).enqueue(pUploadWorkRequest);
+
 
     }
 
