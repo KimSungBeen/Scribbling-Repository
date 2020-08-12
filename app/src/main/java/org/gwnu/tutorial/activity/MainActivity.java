@@ -1,18 +1,19 @@
 package org.gwnu.tutorial.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.fragment.app.FragmentTransaction;
 
 import org.gwnu.tutorial.R;
 import org.gwnu.tutorial.databinding.ActivityMainBinding;
-import org.gwnu.tutorial.fragment.DefaultFragment;
 import org.gwnu.tutorial.fragment.Fragment1;
 import org.gwnu.tutorial.fragment.Fragment2;
+
+import io.reactivex.rxjava3.core.Observable;
 
 public class MainActivity extends DefaultActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
@@ -43,7 +44,6 @@ public class MainActivity extends DefaultActivity {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.frag_container, fragment2);
         fragmentTransaction.commit();
-
 
     }
 
