@@ -15,8 +15,11 @@ public class LoginMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_main);
 
+        //해쉬키 출력
         MyApplication myApplication = (MyApplication) getApplication();
         myApplication.getAppKeyHash();
+
+
     }
 
 }
