@@ -6,6 +6,10 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.VIBRATE" />
 
+    <meta-data
+        android:name="com.kakao.sdk.AppKey"
+        android:value="@key/kakao_app_key" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,7 +21,7 @@
 
         </activity>
 
-        <activity android:name=".barcode.BarcodeMainActivity" >
+        <activity android:name=".barcode.BarcodeMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,7 +36,11 @@
             android:theme="@style/zxing_CaptureTheme"
             android:windowSoftInputMode="stateAlwaysHidden" />
 
-        <activity android:name=".barcode.CustomScannerActivity"/>
+        <activity android:name=".barcode.CustomScannerActivity" />
+
+        <activity android:name=".login.LoginMainActivity">
+
+        </activity>
 
     </application>
 

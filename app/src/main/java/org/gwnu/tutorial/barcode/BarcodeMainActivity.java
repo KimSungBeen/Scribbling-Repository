@@ -38,8 +38,12 @@ public class BarcodeMainActivity extends AppCompatActivity {
             Log.d("onActivityResult", "onActivityResult: ." + re);
             Toast.makeText(this, re, Toast.LENGTH_LONG).show();
 
-            Intent intent1 = new Intent(Intent.ACTION_VIEW, Uri.parse(re));
-            startActivity(intent1);
+            try {
+                Intent intent1 = new Intent(Intent.ACTION_VIEW, Uri.parse(re));
+                startActivity(intent1);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 

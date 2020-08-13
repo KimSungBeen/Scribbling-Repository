@@ -61,4 +61,7 @@ dependencies {
     //Zxing Barcode Scanner
     implementation 'com.journeyapps:zxing-android-embedded:3.5.0'
 
+    //kakao api
+    implementation 'com.kakao.sdk:usermgmt:1.16.0'
+
 }
