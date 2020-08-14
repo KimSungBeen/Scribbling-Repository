@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Tutorial</string>
     <string name="image">image</string>
+
+    <!-- key -->
+    <string name="kakao_app_key">6c88665a9783487414061ef89e57bd22</string>
+    <string name="naver_rogin_client_id">C4Yl8x_mzFlXlwjo9s10</string>
+    <string name="naver_login_client_secret">YT0VGQaXMS</string>
+
 </resources>

@@ -64,4 +64,8 @@ dependencies {
     //kakao api
     implementation 'com.kakao.sdk:usermgmt:1.16.0'
 
+    //naver api
+    implementation ('com.naver.nid:naveridlogin-android-sdk:4.2.6')
+
+
 }
