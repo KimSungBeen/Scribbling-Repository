@@ -1,18 +1,13 @@
 package org.gwnu.tutorial.barcode;
 
-import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
@@ -46,8 +41,10 @@ public class BarcodeMainActivity extends AppCompatActivity {
             Toast.makeText(this, re, Toast.LENGTH_LONG).show();
 
             try {
-                Intent intent1 = new Intent(Intent.ACTION_VIEW, Uri.parse(re));
+//                Intent intent1 = new Intent(Intent.ACTION_VIEW, Uri.parse(re));
+                Intent intent1 = new Intent(this, QRScanResultActivity.class);
                 startActivity(intent1);
+                Log.d(TAG, "onActivityResult: intent");
             } catch (Exception e) {
                 e.printStackTrace();
             }

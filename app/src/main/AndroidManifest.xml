@@ -14,30 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-
-        <meta-data
-            android:name="com.kakao.sdk.AppKey"
-            android:value="@string/kakao_app_key" />
-
-        <activity android:name=".activity.MainActivity">
-
-        </activity>
-
-        <activity android:name=".barcode.BarcodeMainActivity">
-
-        </activity>
-
-<!--        <activity-->
-<!--            android:name=".barcode.AnyOrientationCaptureActivity"-->
-<!--            android:screenOrientation="fullSensor"-->
-<!--            android:stateNotNeeded="true"-->
-<!--            android:theme="@style/zxing_CaptureTheme"-->
-<!--            android:windowSoftInputMode="stateAlwaysHidden" />-->
-
-        <activity android:name=".barcode.CustomScannerActivity" />
-
-        <activity android:name=".login.LoginMainActivity"
-            android:screenOrientation="portrait">
+        <activity android:name=".MotionTuto.MotionTutorial">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -45,8 +22,47 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".login.LoginResultActivity" />
+        <activity android:name=".DotViewPager.ViewPagerTuto">
 
+        </activity>
+
+        <activity android:name=".login.KakaoLoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="oauth"
+                    android:scheme="kakao{6c88665a9783487414061ef89e57bd22}" />
+            </intent-filter>
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity android:name=".barcode.QRScanResultActivity" />
+        <activity android:name=".CouponList.CouponListActivity" />
+
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="@string/kakao_app_key" />
+
+        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".barcode.BarcodeMainActivity" /> <!-- <activity -->
+        <!-- android:name=".barcode.AnyOrientationCaptureActivity" -->
+        <!-- android:screenOrientation="fullSensor" -->
+        <!-- android:stateNotNeeded="true" -->
+        <!-- android:theme="@style/zxing_CaptureTheme" -->
+        <!-- android:windowSoftInputMode="stateAlwaysHidden" /> -->
+        <activity android:name=".barcode.CustomScannerActivity" />
+        <activity
+            android:name=".login.LoginMainActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".login.LoginResultActivity" />
     </application>
 
 </manifest>
