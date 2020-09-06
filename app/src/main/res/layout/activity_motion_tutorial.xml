@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F3F3F3"
+    android:background="#E4E4E4"
     app:layoutDescription="@xml/activity_motion_tutorial_scene"
     tools:context=".MotionTuto.MotionTutorial">
 
@@ -13,12 +13,22 @@
         android:layout_width="match_parent"
         android:layout_height="400dp"
         android:background="@drawable/shadow_effect_bg"
+        android:addStatesFromChildren="true"
         android:orientation="vertical">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/motion_list"
+        <!--        <androidx.recyclerview.widget.RecyclerView-->
+        <!--            android:id="@+id/motion_list"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:layout_marginHorizontal="10dp"-->
+        <!--            android:layout_marginTop="30dp" />-->
+
+        <ListView
+            android:id="@+id/motion_list_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:divider="@android:color/white"
+            android:dividerHeight="0px"
             android:layout_marginHorizontal="10dp"
             android:layout_marginTop="30dp" />
 

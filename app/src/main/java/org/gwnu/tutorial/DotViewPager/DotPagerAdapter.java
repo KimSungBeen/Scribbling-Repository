@@ -42,6 +42,9 @@ public class DotPagerAdapter extends PagerAdapter {
         return false;
     }
 
+    @Override
+    public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
+    }
 
     public int getCount() {
         return obj.size();
