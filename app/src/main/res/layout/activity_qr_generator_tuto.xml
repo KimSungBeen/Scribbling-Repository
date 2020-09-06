@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="qr"
+            type="org.gwnu.tutorial.zxing.QrGeneratorTuto" />
+
+        <variable
+            name="qrViewModel"
+            type="org.gwnu.tutorial.zxing.QRViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/qr_generator_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/qr_edit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@={qr.editText}"
+            app:layout_constraintEnd_toStartOf="@id/qr_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/qr_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{qr.btnText.toString()}"
+            android:onClick="@{() -> qrViewModel.loadQRCode(qr.mActivity, qr.editText, qr.qrImg)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/qr_edit"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/qr_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
