@@ -1,5 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 30
@@ -33,6 +35,10 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
     }
 
 }
@@ -72,6 +78,21 @@ dependencies {
     //Naver api
     implementation ('com.naver.nid:naveridlogin-android-sdk:4.2.6')
 
-    //Material Design
+    //Room
+    def room_version = "2.2.5"
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version" // For Kotlin use kapt instead of annotationProcessor
 
+    //coroutine
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.3.0-alpha07"
+
+    // ViewModelProviders
+    def lifecycle_version = "2.2.0"
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+
+    //ktx-extension
+    implementation "androidx.activity:activity-ktx:1.1.0"
 }
