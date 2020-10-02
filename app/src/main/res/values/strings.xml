@@ -8,5 +8,7 @@
     <string name="naver_login_client_secret">YT0VGQaXMS</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="test_title">sunt aut facere repellat provident occaecati excepturi optio reprehenderit</string>
+    <string name="test_body">quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto</string>
 
 </resources>
