@@ -14,13 +14,8 @@ import com.kakao.auth.IApplicationConfig;
 import com.kakao.auth.ISessionConfig;
 import com.kakao.auth.KakaoAdapter;
 import com.kakao.auth.KakaoSDK;
-import com.nhn.android.naverlogin.OAuthLogin;
-
-import org.gwnu.tutorial.R;
 
 import java.security.MessageDigest;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public class MyApplication extends Application {
     private static volatile MyApplication instance = null;
