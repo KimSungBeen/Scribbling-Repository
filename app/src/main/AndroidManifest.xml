@@ -15,18 +15,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".zxing.QrGeneratorTuto">
+        <activity android:name=".material.MaterialMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".room.RoomTuto">
+
+        <activity android:name=".material.MaterialTutorial">
 
         </activity>
-        <activity android:name=".MotionTuto.MotionTutorial"></activity>
-        <activity android:name=".DotViewPager.ViewPagerTuto"></activity>
+
+        <activity android:name=".retrofit2.JavaRetrofitTutorial" />
+        <activity android:name=".zxing.QrGeneratorTuto" />
+        <activity android:name=".room.RoomTuto" />
+        <activity android:name=".MotionTuto.MotionTutorial" />
+        <activity android:name=".DotViewPager.ViewPagerTuto" />
         <activity android:name=".login.KakaoLoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -38,12 +43,6 @@
                     android:host="oauth"
                     android:scheme="kakao{6c88665a9783487414061ef89e57bd22}" />
             </intent-filter>
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
         </activity>
         <activity android:name=".barcode.QRScanResultActivity" />
         <activity android:name=".CouponList.CouponListActivity" />
@@ -53,12 +52,7 @@
             android:value="@string/kakao_app_key" />
 
         <activity android:name=".activity.MainActivity" />
-        <activity android:name=".barcode.BarcodeMainActivity" /> <!-- <activity -->
-        <!-- android:name=".barcode.AnyOrientationCaptureActivity" -->
-        <!-- android:screenOrientation="fullSensor" -->
-        <!-- android:stateNotNeeded="true" -->
-        <!-- android:theme="@style/zxing_CaptureTheme" -->
-        <!-- android:windowSoftInputMode="stateAlwaysHidden" /> -->
+        <activity android:name=".barcode.BarcodeMainActivity" />
         <activity android:name=".barcode.CustomScannerActivity" />
         <activity
             android:name=".login.LoginMainActivity"
