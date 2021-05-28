@@ -9,11 +9,11 @@ class BurgerModule {
 
     @Provides
     @Named(value = "beef")
-    fun provideBurger(bun: WheatBun, patty: BeefPatty) = Burger(bun = bun, patty = patty)
+    fun provideBeefBurger(bun: WheatBun, patty: BeefPatty) = Burger(bun = bun, patty = patty)
 
     @Provides
     @Named(value = "fork")
-    fun provideBurger(bun: WheatBun, patty: ForkPatty) = Burger(bun = bun, patty = patty)
+    fun provideForkBurger(bun: WheatBun, patty: ForkPatty) = Burger(bun = bun, patty = patty)
 
     @Provides
     fun provideBun() = WheatBun()

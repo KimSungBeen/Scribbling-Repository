@@ -7,7 +7,7 @@
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
-        android:name=".application.MyApplication"
+        android:name=".kakaologinjava.SampleApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -15,23 +15,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar"
         android:usesCleartextTraffic="true">
-
-        <activity android:name=".dagger2.SampleActivity">
+        <activity android:name=".CalendarActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".material.MaterialMainActivity">
-
-        </activity>
-
-        <activity android:name=".material.MaterialTutorial">
+        <activity android:name=".kakaologinjava.kakaoLoginJavaActivity">
 
         </activity>
+        <activity
+            android:name=".ScrollingActivity"
+            android:label="@string/title_activity_scrolling"
+            android:theme="@style/Theme.MaterialComponents.NoActionBar">
 
+        </activity>
+        <activity android:name=".dagger2.SampleActivity"></activity>
+        <activity android:name=".material.MaterialMainActivity" />
+        <activity android:name=".material.MaterialTutorial" />
         <activity android:name=".retrofit2.JavaRetrofitTutorial" />
         <activity android:name=".zxing.QrGeneratorTuto" />
         <activity android:name=".room.RoomTuto" />
@@ -63,6 +65,19 @@
             android:name=".login.LoginMainActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".login.LoginResultActivity" />
+        <activity android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <!-- Redirect URI: "kakao{NATIVE_APP_KEY}://oauth" -->
+                <data
+                    android:host="oauth"
+                    android:scheme="kakao6c88665a9783487414061ef89e57bd22" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
